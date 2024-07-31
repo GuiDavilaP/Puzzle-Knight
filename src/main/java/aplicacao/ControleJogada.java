@@ -51,7 +51,7 @@ public class ControleJogada {
     }
 
     public static void voltaJogada() {
-        if (estadoMov != EstadoMovimento.CORRETO && quantMov > 0) {
+        if (estadoMov == EstadoMovimento.ERRADO && quantMov > 0) {
             quantMov -= 1;
             estadoMov = EstadoMovimento.SEMMOV;
             Jogo.subTurno();
