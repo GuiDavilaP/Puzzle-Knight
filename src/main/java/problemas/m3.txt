@@ -1,0 +1,7 @@
+rr4k1/1q3p1p/2QP2p1/8/Pp2PP2/8/6BP/5R1K
+rr4k1/1Q3p1p/3P2p1/8/Pp2PP2/8/6BP/5R1K
+r5k1/1r3p1p/3P2p1/8/Pp2PP2/8/6BP/5R1K
+r5k1/1r3p1p/3P2p1/4P3/Pp3P2/8/6BP/5R1K
+
+
+https://lichess.org/analysis/rr4k1/1q3p1p/2QP2p1/8/Pp2PP2/8/6BP/5R1K_w_-_-_1_40?color=white#81
