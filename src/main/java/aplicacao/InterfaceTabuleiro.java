@@ -15,6 +15,7 @@ public class InterfaceTabuleiro extends GridPane {
     public static final int tamCasa = 80;
     private StackPane[][] casas = new StackPane[8][8];
     Label movimentoLabel = new Label("");
+    Label fimLabel = new Label("");
 
     public InterfaceTabuleiro() {
         setHgap(0);  // Sem espaçamento entre as células

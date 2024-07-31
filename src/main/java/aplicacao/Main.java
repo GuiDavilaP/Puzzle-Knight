@@ -14,11 +14,12 @@ import javafx.geometry.Pos;
 
 import java.io.IOException;
 import java.net.URL;
+import aplicacao.EstadoMovimento.*;
 
 import static aplicacao.pecas.Cor.BRANCO;
 
 public class Main extends Application {
-    public static InterfaceTabuleiro tabuleiro;
+    public static InterfaceTabuleiro tabuleiro = new InterfaceTabuleiro();
 
     public static void main(String[] args) throws IOException {
         Jogo.carregaNovoProblema();
@@ -28,10 +29,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage estagio) {
-        tabuleiro = new InterfaceTabuleiro();
         BorderPane tela = getTela();
         tela.setLeft(tabuleiro);
-
 
         // Cria e adiciona o menu à direita
         VBox menu = criaMenu();
@@ -100,7 +99,13 @@ public class Main extends Application {
         tabuleiro.movimentoLabel.setStyle("-fx-font-size: 28px;");
         tabuleiro.movimentoLabel.setAlignment(Pos.CENTER);
 
-        menu.getChildren().addAll(tituloLabel, jogadaLabel, tabuleiro.movimentoLabel);
+        // Label para problema resolvido
+        tabuleiro.fimLabel.setTextFill(Color.GREEN);
+        tabuleiro.fimLabel.setStyle("-fx-font-size: 40px;");
+        tabuleiro.fimLabel.setPadding(new Insets(40,0,0,0));
+        tabuleiro.fimLabel.setAlignment(Pos.CENTER);
+
+        menu.getChildren().addAll(tituloLabel, jogadaLabel, tabuleiro.movimentoLabel, tabuleiro.fimLabel);
     }
 
     private static void addBotoes(VBox menu){
@@ -116,6 +121,8 @@ public class Main extends Application {
 
         // Adiciona ação ao botão "Voltar"
         voltarButton.setOnAction(event -> ControleJogada.voltaJogada());
+        // Adiciona ação ao botão "Próximo"
+        proximoButton.setOnAction(event -> Jogo.carregaNovoProblema());
 
         HBox buttonBox = new HBox(20); // Espaçamento de 20 pixels entre os botões
         buttonBox.setAlignment(Pos.CENTER);
@@ -124,22 +131,31 @@ public class Main extends Application {
         menu.getChildren().add(buttonBox);
     }
 
+    public static void atualizaMenu(EstadoMovimento estadoMovimento){
+        tabuleiro.fimLabel.setText("");
+        switch(estadoMovimento){
+            case CORRETO:
+                tabuleiro.movimentoLabel.setText("Correto");
+                tabuleiro.movimentoLabel.setTextFill(Color.GREEN);
+                break;
+            case ERRADO:
+                tabuleiro.movimentoLabel.setText("Incorreto");
+                tabuleiro.movimentoLabel.setTextFill(Color.RED);
+                break;
+            case SEMMOV:
+                tabuleiro.movimentoLabel.setText("");
+                break;
+            case FINALIZADO:
+                tabuleiro.movimentoLabel.setText("");
+                tabuleiro.fimLabel.setText("RESOLVIDO!");
+                tabuleiro.fimLabel.setTextFill(Color.GREEN);
+                break;
+        }
+    }
+
     public static void atualizaTabuleiro(){
         tabuleiro.atualizaTabuleiro();
         System.out.println("Turno:" + Jogo.getTurnoAtual());
-    }
-
-    public static void atualizaMenu(EstadoMovimento estadoMovimento){
-        if (estadoMovimento == EstadoMovimento.CORRETO) {
-            tabuleiro.movimentoLabel.setText("Correto");
-            tabuleiro.movimentoLabel.setTextFill(Color.GREEN);
-        } else if(estadoMovimento == EstadoMovimento.ERRADO){
-            tabuleiro.movimentoLabel.setText("Incorreto");
-            tabuleiro.movimentoLabel.setTextFill(Color.RED);
-        }
-        else{
-            tabuleiro.movimentoLabel.setText("");
-        }
     }
 
     public static void desenhaTabuleiro(Peca[][] tabuleiro) {

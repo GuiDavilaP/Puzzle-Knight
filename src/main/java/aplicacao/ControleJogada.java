@@ -1,6 +1,7 @@
 package aplicacao;
 
 import aplicacao.pecas.*;
+import static aplicacao.EstadoMovimento.*;
 
 public class ControleJogada {
     private static Peca pecaSelecionada = null;
@@ -12,7 +13,8 @@ public class ControleJogada {
     private static void movePeca(Pos posicaoDestino) {
         boolean movValido = pecaSelecionada.testaMovimento(pecaSelecionada.getPosicao(), posicaoDestino, Jogo.getJogo());
 
-        if (movValido && estadoMov != EstadoMovimento.ERRADO) {
+        boolean continua = (estadoMov == SEMMOV) || (estadoMov == CORRETO);
+        if (movValido && continua) {
             quantMov += 1;
             Jogo.addTurno();
 
@@ -31,10 +33,15 @@ public class ControleJogada {
 
             boolean jogadaCorreta = testaJogada();
             if (jogadaCorreta) {
-                jogadaBot();
-                estadoMov = EstadoMovimento.CORRETO;
+                if(Jogo.terminou()){
+                    estadoMov = FINALIZADO;
+                }
+                else{
+                    estadoMov = CORRETO;
+                    jogadaBot();
+                }
             } else
-                estadoMov = EstadoMovimento.ERRADO;
+                estadoMov = ERRADO;
 
             Main.atualizaMenu(estadoMov);
         } else
@@ -51,9 +58,9 @@ public class ControleJogada {
     }
 
     public static void voltaJogada() {
-        if (estadoMov == EstadoMovimento.ERRADO && quantMov > 0) {
+        if (estadoMov == ERRADO && quantMov > 0) {
             quantMov -= 1;
-            estadoMov = EstadoMovimento.SEMMOV;
+            estadoMov = SEMMOV;
             prontoMov = false;
             Jogo.subTurno();
             Jogo.resetaTabuleiro();
@@ -106,7 +113,7 @@ public class ControleJogada {
     }
 
     public static void resetEstadoMov() {
-        estadoMov = EstadoMovimento.SEMMOV;
+        estadoMov = SEMMOV;
     }
 
     public static void resetQuantMov() {

@@ -9,31 +9,32 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static aplicacao.pecas.Cor.*;
 import static java.nio.file.Files.readAllLines;
 
 public class Jogo {
+    private static final int NUMPROB = 5;
     //Problema problema;
     private static Peca[][] tabuleiroJogo = new Peca[8][8];
     //private static ArrayList<Jogada> jogadas = new ArrayList<>();
     private static ArrayList<String> movimentos = new ArrayList<>();
+    private static ArrayList<Integer> puzzlesJogados = new ArrayList<>();
     private static int turnoAtual = 0;
 
-    private static boolean cliqueDestino = false;  // false = clique é origem, true = clique é destino
-
     public static void carregaNovoProblema(){
-        // TODO:Cria valor randômico para selecionar problema.
-
         clearJogo();
+        movimentos.clear();
         ControleJogada.resetEstadoMov();
         ControleJogada.resetQuantMov();
-        // Lê problema.
-        Path problemaTeste1 = Paths.get("src/main/java/problemas/m4.txt");
+        turnoAtual = 0;
+
+        Path problema = escolheProblema();
 
         List<String> linhas;
         try {
-            linhas = readAllLines(problemaTeste1);
+            linhas = readAllLines(problema);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -43,6 +44,27 @@ public class Jogo {
         // Atualiza posição.
         atualizaJogo(linhas.getFirst());
 
+        Main.atualizaTabuleiro();
+        Main.atualizaMenu(EstadoMovimento.SEMMOV);
+    }
+
+    private static Path escolheProblema(){
+        // Escolhe problema.
+        boolean probJogado;
+        int randomNum;
+
+        if(puzzlesJogados.size() >= 5)
+            puzzlesJogados.clear();
+
+        do{
+            randomNum = ThreadLocalRandom.current().nextInt(1, NUMPROB + 1);
+            if(puzzlesJogados != null)
+                probJogado = puzzlesJogados.contains(randomNum);
+            else
+                probJogado = false;
+        } while(probJogado);
+
+        return Paths.get("src/main/java/problemas/m" + String.valueOf(randomNum)+".txt");
     }
 
     public static void atualizaJogo(String linhaFem){
@@ -143,10 +165,6 @@ public class Jogo {
         Jogo.tabuleiroJogo[posicaoDestino.getLinha()][posicaoDestino.getColuna()] = null;
     }
 
-    public static void insereTabuleiroJogo(Peca[][] tabuleiroJogo) {
-        Jogo.tabuleiroJogo = tabuleiroJogo;
-    }
-
     public static void inserePecaJogo(Peca peca) {
         int linha = peca.getPosicao().getLinha();
         int coluna = peca.getPosicao().getColuna();
@@ -160,7 +178,6 @@ public class Jogo {
     public static int getTurnoAtual() {
         return turnoAtual;
     }
-
     public static void addTurno() {
         Jogo.turnoAtual += 1;
     }
@@ -176,20 +193,12 @@ public class Jogo {
         return tabuleiroJogo;
     }
 
-    public static void setPecaTabuleiroJogo(Peca peca) {
-        Jogo.tabuleiroJogo[peca.getPosicao().getLinha()][peca.getPosicao().getColuna()] = peca;
-    }
-
     public static ArrayList<String> getMovimentos() {
         return movimentos;
     }
 
-    //-------------------------
-    public static boolean getCliqueDestino() {
-        return cliqueDestino;
-    }
-
-    public static void switchCliqueDestino() {
-        cliqueDestino = !cliqueDestino;
+    public static boolean terminou(){
+        // Subtrai 1 pois problemas não incluem o movimento de resposta das pretas final.
+        return (turnoAtual == movimentos.size() - 1);
     }
 }
