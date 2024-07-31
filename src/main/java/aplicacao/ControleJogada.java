@@ -54,6 +54,7 @@ public class ControleJogada {
         if (estadoMov == EstadoMovimento.ERRADO && quantMov > 0) {
             quantMov -= 1;
             estadoMov = EstadoMovimento.SEMMOV;
+            prontoMov = false;
             Jogo.subTurno();
             Jogo.resetaTabuleiro();
 

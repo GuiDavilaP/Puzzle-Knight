@@ -123,12 +123,6 @@ public class Jogo {
         }
     }
 
-    private static boolean checaTabuleiro(){
-        //
-
-        return true;
-    }
-
     private static void clearJogo() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -147,7 +141,6 @@ public class Jogo {
 
     public static void apagaPosJogo(Pos posicaoDestino) {
         Jogo.tabuleiroJogo[posicaoDestino.getLinha()][posicaoDestino.getColuna()] = null;
-        //System.out.println("Apagou, linha: " + posicaoDestino.getLinha() + "coluna: " + posicaoDestino.getColuna());
     }
 
     public static void insereTabuleiroJogo(Peca[][] tabuleiroJogo) {
