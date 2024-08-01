@@ -1,0 +1,6 @@
+r3r2k/4P1p1/p5qp/1p4B1/3p4/3P1Q1P/PP4P1/5RK1
+Q3r2k/4P1p1/p5qp/1p4B1/3p4/3P3P/PP4P1/5RK1
+r6k/4P1p1/p5qp/1p4B1/3p4/3P3P/PP4P1/5RK1
+r4R1k/4P1p1/p5qp/1p4B1/3p4/3P3P/PP4P1/6K1
+
+https://lichess.org/analysis/r3r2k/4P1p1/p5qp/1p4B1/3p4/3P1Q1P/PP4P1/5RK1_w_-_-_0_29?color=white#practice
