@@ -1,7 +1,9 @@
-8/4rpk1/3N1Rp1/4n1Np/Pp1q4/1B6/KP4PP/5R2
-8/4rpk1/3N1Rp1/6Np/Pp1q4/1B1n4/KP4PP/5R2
-8/4rRk1/3N2p1/6Np/Pp1q4/1B1n4/KP4PP/5R2
-8/4rR2/3N2pk/6Np/Pp1q4/1B1n4/KP4PP/5R2
+r4rk1/p1p2ppp/2p5/3p3q/8/1P2P3/PBPP2R1/RN2nK2
+r4rk1/p1p2pRp/2p5/3p3q/8/1P2P3/PBPP4/RN2nK2
+r4r1k/p1p2pRp/2p5/3p3q/8/1P2P3/PBPP4/RN2nK2
+r4r1k/p1p2p1p/2p5/3p2Rq/8/1P2P3/PBPP4/RN2nK2
+r4r1k/p1p4p/2p2p2/3p2Rq/8/1P2P3/PBPP4/RN2nK2
+r4r1k/p1p4p/2p2p2/3p3R/8/1P2P3/PBPP4/RN2nK2
 
 
-https://lichess.org/analysis/r3k2r/5ppp/p1q1pn2/2b5/Np3P2/1p2P3/2Q3PP/R1BR2K1_w_kq_-_0_21?color=white#43
+https://lichess.org/analysis/r4rk1/p1p2ppp/2p5/3p3q/8/1P2P3/PBPP2R1/RN2nK2_w_-_-_0_21?color=white#practice
