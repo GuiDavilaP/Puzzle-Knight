@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static aplicacao.EstadoMovimento.ERRADO;
+import static aplicacao.EstadoMovimento.SEMMOV;
 import static aplicacao.pecas.Cor.*;
 import static java.nio.file.Files.readAllLines;
 
@@ -53,7 +55,7 @@ public class Jogo {
         boolean probJogado;
         int randomNum;
 
-        if(puzzlesJogados.size() >= 5)
+        if(puzzlesJogados.size() >= NUMPROB)
             puzzlesJogados.clear();
 
         do{
@@ -130,18 +132,62 @@ public class Jogo {
         }
     }
 
-    private static void leituraJogadas(List<String> linhas){
-        for(int i=0;i<linhas.size();i++){
-            if(linhas.get(i) != null && !linhas.get(i).isEmpty()){
-                Jogo.movimentos.add(linhas.get(i));
+    public static String getFen(Peca[][] tabuleiro){
+        String fem = "";
+        int somaFem=0;
+        int contBarra=0;
+
+        for(int i=0;i<tabuleiro.length;i++){
+            for(int j=0;j<tabuleiro[i].length;j++){
+                if(tabuleiro[i][j] == null) {
+                    somaFem++;
+                }
+                else if(somaFem!=8){
+                    if(somaFem !=0){
+                        fem = fem.concat(somaFem + "");
+                    }
+                    somaFem=0;
+                    if(tabuleiro[i][j].getCor() == Cor.BRANCO){
+                        fem = fem.concat( Character.toUpperCase(tabuleiro[i][j].getSimbolo())+ "");
+                    }
+                    else{
+                        fem =  fem.concat( tabuleiro[i][j].getSimbolo()+ "");
+                    }
+                }
             }
-            else{
-                i=linhas.size();
+            if(somaFem!=0){
+                fem = fem.concat(somaFem +"");
+                if( contBarra!=7){
+                    fem = fem.concat("/");
+                }
+                contBarra++;
+                somaFem=0;
+            }
+            else if(i!=0 && contBarra!=7){
+                fem = fem.concat("/");
+                contBarra++;
             }
         }
+        return fem;
+    }
 
-        for(int i = 0; i<Jogo.movimentos.size(); i++){
+    private static void leituraJogadas(List<String> linhas){
+        int i = 0;
+        while(linhas.get(i) != null && !linhas.get(i).isEmpty()){
+            Jogo.movimentos.add(linhas.get(i));
             System.out.println(Jogo.movimentos.get(i));
+            i++;
+        }
+    }
+
+    public static void voltaPosicao() {
+        EstadoMovimento estadoMov = ControleJogada.getEstadoMov();
+        int quantMov = ControleJogada.getQuantMov();
+
+        if(estadoMov == ERRADO && quantMov > 0){
+            Jogo.subTurno();
+            Jogo.resetaTabuleiro();
+            ControleJogada.voltaJogada();
         }
     }
 
