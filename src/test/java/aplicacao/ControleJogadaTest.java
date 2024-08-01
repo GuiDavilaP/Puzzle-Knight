@@ -41,15 +41,25 @@ class ControleJogadaTest {
     public void verificaMovimentoValido() {
 
         // testes feitos com o tabuleiro do puzzle m3
-        Jogo.carregaNovoProblema();
         Peca[][] tabuleiro = new Peca[8][8];
 
-        for(int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                tabuleiro[i][j] = Jogo.getJogo()[i][j];
-            }
-        }
-        //adicionando um cavalo p/ completar os testes
+        tabuleiro[0][0] = new Torre(Cor.PRETO, new Pos(0,0), 'r');
+        tabuleiro[0][1] = new Torre(Cor.PRETO, new Pos(0,1), 'r');
+        tabuleiro[0][6] = new Rei(Cor.PRETO, new Pos(0,6), 'k');
+        tabuleiro[1][1] = new Rainha(Cor.PRETO, new Pos(1,1), 'q');
+        tabuleiro[1][5] = new Peao(Cor.PRETO, new Pos(1,5), 'p');
+        tabuleiro[1][7] = new Peao(Cor.PRETO, new Pos(1,7), 'p');
+        tabuleiro[2][6] = new Peao(Cor.PRETO, new Pos(2,6), 'p');
+        tabuleiro[2][3] = new Peao(Cor.BRANCO, new Pos(2,3), 'p');
+        tabuleiro[2][2] = new Rainha(Cor.BRANCO, new Pos(2,2), 'q');
+        tabuleiro[4][0] = new Peao(Cor.BRANCO, new Pos(4,0), 'p');
+        tabuleiro[4][1] = new Peao(Cor.PRETO, new Pos(4,1), 'p');
+        tabuleiro[4][4] = new Peao(Cor.BRANCO, new Pos(4,4), 'p');
+        tabuleiro[4][5] = new Peao(Cor.BRANCO, new Pos(4,5), 'p');
+        tabuleiro[6][7] = new Peao(Cor.BRANCO, new Pos(6,7), 'p');
+        tabuleiro[6][6] = new Bispo(Cor.BRANCO, new Pos(6,6), 'b');
+        tabuleiro[7][5] = new Torre(Cor.BRANCO, new Pos(7,5), 'r');
+        tabuleiro[7][7] = new Rei(Cor.BRANCO, new Pos(7,7), 'k');
         tabuleiro[6][2] = new Cavalo(Cor.BRANCO, new Pos(6,2), 'n');
 
         assertEquals(true, tabuleiro[0][0].testaMovimento(tabuleiro[0][0].getPosicao(), new Pos(2, 0), tabuleiro));
