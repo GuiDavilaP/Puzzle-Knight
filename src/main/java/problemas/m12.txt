@@ -1,0 +1,8 @@
+r7/p2n1pkp/2pb2p1/3p4/7R/2P4P/1qB1QPP1/4R1K1
+r7/p2n1pkR/2pb2p1/3p4/8/2P4P/1qB1QPP1/4R1K1
+r7/p2n1p1k/2pb2p1/3p4/8/2P4P/1qB1QPP1/4R1K1
+r7/p2n1p1k/2pb2B1/3p4/8/2P4P/1q2QPP1/4R1K1
+r7/p2n1p2/2pb2k1/3p4/8/2P4P/1q2QPP1/4R1K1
+r7/p2n1p2/2pb2k1/3p4/8/2P4P/1Q3PP1/4R1K1
+
+https://lichess.org/analysis/r7/p2n1pkp/2pb2p1/3p4/7R/2P4P/1qB1QPP1/4R1K1_w_-_-_2_24?color=white#practice

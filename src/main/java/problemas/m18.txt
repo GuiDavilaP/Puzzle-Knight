@@ -1,0 +1,7 @@
+r4k1r/p1pq1bNp/2p5/4Q3/2Np2n1/3P3P/PPP2P2/4R1K1
+r4k1r/p1pq1b1p/2p1N3/4Q3/2Np2n1/3P3P/PPP2P2/4R1K1
+r4k1r/p1pq3p/2p1b3/4Q3/2Np2n1/3P3P/PPP2P2/4R1K1
+r4k1Q/p1pq3p/2p1b3/8/2Np2n1/3P3P/PPP2P2/4R1K1
+
+
+https://lichess.org/analysis/r4k1r/p1pq1bNp/2p5/4Q3/2Np2n1/3P3P/PPP2P2/4R1K1_w_-_-_0_22?color=white#42

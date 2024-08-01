@@ -1,0 +1,6 @@
+r2q1rk1/pp2bpp1/n1p1P1np/3p1Q2/3P4/2P2N2/PP4PP/RNB2RK1
+r2q1rk1/pp2bPp1/n1p3np/3p1Q2/3P4/2P2N2/PP4PP/RNB2RK1
+r2q2k1/pp2brp1/n1p3np/3p1Q2/3P4/2P2N2/PP4PP/RNB2RK1
+r2q2k1/pp2brp1/n1p3Qp/3p4/3P4/2P2N2/PP4PP/RNB2RK1
+
+https://lichess.org/analysis/r2q1rk1/pp2bpp1/n1p1P1np/3p1Q2/3P4/2P2N2/PP4PP/RNB2RK1_w_-_-_1_13?color=white#practice

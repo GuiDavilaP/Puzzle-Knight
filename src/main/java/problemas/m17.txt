@@ -1,0 +1,9 @@
+2R5/5R2/p7/1k1p4/2p5/2B1r3/PP5q/3K4
+2R5/1R6/p7/1k1p4/2p5/2B1r3/PP5q/3K4
+2R5/1R6/p7/3p4/k1p5/2B1r3/PP5q/3K4
+2R5/8/p7/3p4/kRp5/2B1r3/PP5q/3K4
+2R5/8/p7/k2p4/1Rp5/2B1r3/PP5q/3K4
+8/8/p7/k1Rp4/1Rp5/2B1r3/PP5q/3K4
+
+
+https://lichess.org/analysis/2R5/5R2/p7/1k1p4/2p5/2B1r3/PP5q/3K4_w_-_-_6_43?color=white#84

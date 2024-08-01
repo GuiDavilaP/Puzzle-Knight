@@ -1,0 +1,8 @@
+2r1k2r/pp2pp2/1qp4p/8/8/2b5/PPPQ1PP1/2KR3R
+2r1k2r/pp1Qpp2/1qp4p/8/8/2b5/PPP2PP1/2KR3R
+2r2k1r/pp1Qpp2/1qp4p/8/8/2b5/PPP2PP1/2KR3R
+2Q2k1r/pp2pp2/1qp4p/8/8/2b5/PPP2PP1/2KR3R
+2Q4r/pp2ppk1/1qp4p/8/8/2b5/PPP2PP1/2KR3R
+7r/pp2ppk1/1qp4p/8/6Q1/2b5/PPP2PP1/2KR3R
+
+https://lichess.org/analysis/2r1k2r/pp2pp2/1qp4p/8/8/2b5/PPPQ1PP1/2KR3R_w_k_-_0_17?color=white#32

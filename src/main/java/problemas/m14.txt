@@ -1,0 +1,6 @@
+8/2p1br1k/pp1p3p/3P2p1/P1P2nN1/1P2K2R/1B6/8
+8/2p1br1k/pp1p3R/3P2p1/P1P2nN1/1P2K3/1B6/8
+6k1/2p1br2/pp1p3R/3P2p1/P1P2nN1/1P2K3/1B6/8
+6kR/2p1br2/pp1p4/3P2p1/P1P2nN1/1P2K3/1B6/8
+
+https://lichess.org/analysis/8/2p1br1k/pp1p3p/3P2p1/P1P2nN1/1P2K2R/1B6/8_w_-_-_6_47?color=white#practice
