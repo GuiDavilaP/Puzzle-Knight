@@ -1,0 +1,8 @@
+2bq1k2/6nQ/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8
+2bq1k2/6Q1/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8
+2bqk3/6Q1/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8
+2bqk1Q1/8/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8
+2bq2Q1/3k4/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8
+2bq2Q1/3k2R1/p4p2/2p1pP1q/2p1P3/2P4P/PP4PK/8
+
+https://lichess.org/analysis/2bq1k2/6nQ/p4p2/2p1pP1q/2p1P3/2P3RP/PP4PK/8_w_-_-_1_36?color=white#practice

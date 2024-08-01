@@ -1,7 +1,7 @@
-8/4rpk1/3N1Rp1/4n1Np/Pp1q4/1B6/KP4PP/5R2
-8/4rpk1/3N1Rp1/6Np/Pp1q4/1B1n4/KP4PP/5R2
-8/4rRk1/3N2p1/6Np/Pp1q4/1B1n4/KP4PP/5R2
-8/4rR2/3N2pk/6Np/Pp1q4/1B1n4/KP4PP/5R2
+5r2/1bpr2k1/pp3q1p/n2p1ppQ/3P1B2/P1n1PP2/2B3PP/R1R3K1
+5r2/1bpr2k1/pp3q1p/n2pBppQ/3P4/P1n1PP2/2B3PP/R1R3K1
+5r2/1bpr2k1/pp3q1p/3pBppQ/2nP4/P1n1PP2/2B3PP/R1R3K1
+5r2/1bpr2k1/pp3B1p/3p1ppQ/2nP4/P1n1PP2/2B3PP/R1R3K1
 
 
-https://lichess.org/analysis/r3k2r/5ppp/p1q1pn2/2b5/Np3P2/1p2P3/2Q3PP/R1BR2K1_w_kq_-_0_21?color=white#43
+https://lichess.org/analysis/5r2/1bpr2k1/pp3q1p/n2p1ppQ/3P1B2/P1n1PP2/2B3PP/R1R3K1_w_-_-_0_26?color=white#50

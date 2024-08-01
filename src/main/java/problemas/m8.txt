@@ -1,0 +1,9 @@
+5rk1/2pb1r2/p1p3pp/3nR3/4N3/P5QP/1Pq2PP1/R5K1
+5rk1/2pb1r2/p1p3Qp/3nR3/4N3/P6P/1Pq2PP1/R5K1
+5rk1/2pb2r1/p1p3Qp/3nR3/4N3/P6P/1Pq2PP1/R5K1
+5rk1/2pb2r1/p1p2NQp/3nR3/8/P6P/1Pq2PP1/R5K1
+6k1/2pb2r1/p1p2rQp/3nR3/8/P6P/1Pq2PP1/R5K1
+6k1/2pb2r1/p1p2r1p/3nR3/8/P6P/1PQ2PP1/R5K1
+
+
+https://lichess.org/analysis/5rk1/2pb1r2/p1p3pp/3nR3/4N3/P5QP/1Pq2PP1/R5K1_w_-_-_0_21?color=white#40

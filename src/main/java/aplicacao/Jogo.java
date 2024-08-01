@@ -17,7 +17,7 @@ import static aplicacao.pecas.Cor.*;
 import static java.nio.file.Files.readAllLines;
 
 public class Jogo {
-    private static final int NUMPROB = 5;
+    private static final int NUMPROB = 11;
     //Problema problema;
     private static Peca[][] tabuleiroJogo = new Peca[8][8];
     //private static ArrayList<Jogada> jogadas = new ArrayList<>();
