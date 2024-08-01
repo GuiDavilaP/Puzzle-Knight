@@ -91,10 +91,12 @@ public class ControleJogada {
     }
 
     public static boolean testaJogada() {
-        String femCorreto = Jogo.getMovimentos().get(Jogo.getTurnoAtual());
-        String femAtual = Jogo.getFen(Jogo.getTabuleiroJogo());
-
-        return (femAtual.equals(femCorreto));
+        int turnoAtual = Jogo.getTurnoAtual();
+        String fenCorreto = Jogo.getMovimentos().get(turnoAtual);
+        String fenAtual = Jogo.getFen(Jogo.getTabuleiroJogo());
+        System.out.println("FenEsperado: " + fenCorreto);
+        System.out.println("FenJogado: " + fenAtual);
+        return (fenAtual.equals(fenCorreto));
     }
 
     public static void voltaJogada(){

@@ -32,7 +32,8 @@ public class Jogo {
         ControleJogada.resetQuantMov();
         turnoAtual = 0;
 
-        Path problema = escolheProblema();
+        //Path problema = escolheProblema();
+        Path problema = Paths.get("src/main/java/problemas/m2.txt");
 
         List<String> linhas;
         try {
@@ -132,43 +133,35 @@ public class Jogo {
         }
     }
 
-    public static String getFen(Peca[][] tabuleiro){
-        String fem = "";
-        int somaFem=0;
-        int contBarra=0;
+    public static String getFen(Peca[][] tabuleiro) {
+        StringBuilder fen = new StringBuilder();
+        int emptyCount = 0;
 
-        for(int i=0;i<tabuleiro.length;i++){
-            for(int j=0;j<tabuleiro[i].length;j++){
-                if(tabuleiro[i][j] == null) {
-                    somaFem++;
-                }
-                else if(somaFem!=8){
-                    if(somaFem !=0){
-                        fem = fem.concat(somaFem + "");
+        for (int i = 0; i < tabuleiro.length; i++) {
+            for (int j = 0; j < tabuleiro[i].length; j++) {
+                if (tabuleiro[i][j] == null) {
+                    emptyCount++;
+                } else {
+                    if (emptyCount > 0) {
+                        fen.append(emptyCount);
+                        emptyCount = 0;
                     }
-                    somaFem=0;
-                    if(tabuleiro[i][j].getCor() == Cor.BRANCO){
-                        fem = fem.concat( Character.toUpperCase(tabuleiro[i][j].getSimbolo())+ "");
+                    char symbol = tabuleiro[i][j].getSimbolo();
+                    if (tabuleiro[i][j].getCor() == Cor.BRANCO) {
+                        symbol = Character.toUpperCase(symbol);
                     }
-                    else{
-                        fem =  fem.concat( tabuleiro[i][j].getSimbolo()+ "");
-                    }
+                    fen.append(symbol);
                 }
             }
-            if(somaFem!=0){
-                fem = fem.concat(somaFem +"");
-                if( contBarra!=7){
-                    fem = fem.concat("/");
-                }
-                contBarra++;
-                somaFem=0;
+            if (emptyCount > 0) {
+                fen.append(emptyCount);
+                emptyCount = 0;
             }
-            else if(i!=0 && contBarra!=7){
-                fem = fem.concat("/");
-                contBarra++;
+            if (i < tabuleiro.length - 1) {
+                fen.append('/');
             }
         }
-        return fem;
+        return fen.toString();
     }
 
     private static void leituraJogadas(List<String> linhas){
