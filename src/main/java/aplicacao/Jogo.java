@@ -130,6 +130,45 @@ public class Jogo {
         }
     }
 
+    public static String getFen(Peca[][] tabuleiro){
+        String fem = "";
+        int somaFem=0;
+        int contBarra=0;
+
+        for(int i=0;i<tabuleiro.length;i++){
+            for(int j=0;j<tabuleiro[i].length;j++){
+                if(tabuleiro[i][j] == null) {
+                    somaFem++;
+                }
+                else if(somaFem!=8){
+                    if(somaFem !=0){
+                        fem = fem.concat(somaFem + "");
+                    }
+                    somaFem=0;
+                    if(tabuleiro[i][j].getCor() == Cor.BRANCO){
+                        fem = fem.concat( Character.toUpperCase(tabuleiro[i][j].getSimbolo())+ "");
+                    }
+                    else{
+                        fem =  fem.concat( tabuleiro[i][j].getSimbolo()+ "");
+                    }
+                }
+            }
+            if(somaFem!=0){
+                fem = fem.concat(somaFem +"");
+                if( contBarra!=7){
+                    fem = fem.concat("/");
+                }
+                contBarra++;
+                somaFem=0;
+            }
+            else if(i!=0 && contBarra!=7){
+                fem = fem.concat("/");
+                contBarra++;
+            }
+        }
+        return fem;
+    }
+
     private static void leituraJogadas(List<String> linhas){
         for(int i=0;i<linhas.size();i++){
             if(linhas.get(i) != null && !linhas.get(i).isEmpty()){

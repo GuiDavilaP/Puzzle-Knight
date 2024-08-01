@@ -107,7 +107,7 @@ public class ControleJogada {
 
     public static boolean testaJogada() {
         String femCorreto = Jogo.getMovimentos().get(Jogo.getTurnoAtual());
-        String femAtual = InterfaceTabuleiro.getFem(Jogo.getTabuleiroJogo());
+        String femAtual = Jogo.getFen(Jogo.getTabuleiroJogo());
 
         return (femAtual.equals(femCorreto));
     }
