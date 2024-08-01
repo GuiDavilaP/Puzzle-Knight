@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static aplicacao.EstadoMovimento.ERRADO;
-import static aplicacao.EstadoMovimento.SEMMOV;
 import static aplicacao.pecas.Cor.*;
 import static java.nio.file.Files.readAllLines;
 
@@ -22,7 +21,7 @@ public class Jogo {
     private static Peca[][] tabuleiroJogo = new Peca[8][8];
     //private static ArrayList<Jogada> jogadas = new ArrayList<>();
     private static ArrayList<String> movimentos = new ArrayList<>();
-    private static ArrayList<Integer> puzzlesJogados = new ArrayList<>();
+    private static ArrayList<Integer> puzzlesDisp = new ArrayList<>();
     private static int turnoAtual = 0;
 
     public static void carregaNovoProblema(){
@@ -51,22 +50,18 @@ public class Jogo {
     }
 
     private static Path escolheProblema(){
-        // Escolhe problema.
-        boolean probJogado;
         int randomNum;
 
-        if(puzzlesJogados.size() >= NUMPROB)
-            puzzlesJogados.clear();
+        if(puzzlesDisp.isEmpty()){
+            for(int i = 1; i <= NUMPROB; i++){
+                puzzlesDisp.add(i);
+            }
+        }
+        randomNum = ThreadLocalRandom.current().nextInt(0, puzzlesDisp.size());
+        int posicao = puzzlesDisp.get(randomNum);
+        puzzlesDisp.remove(randomNum);
 
-        do{
-            randomNum = ThreadLocalRandom.current().nextInt(1, NUMPROB + 1);
-            if(puzzlesJogados != null)
-                probJogado = puzzlesJogados.contains(randomNum);
-            else
-                probJogado = false;
-        } while(probJogado);
-
-        return Paths.get("src/main/java/problemas/m" + String.valueOf(randomNum)+".txt");
+        return Paths.get("src/main/java/problemas/m" + String.valueOf(posicao)+".txt");
     }
 
     public static void atualizaJogo(String linhaFem){
