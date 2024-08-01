@@ -57,20 +57,6 @@ public class ControleJogada {
         Main.atualizaTabuleiro();
     }
 
-    public static void voltaJogada() {
-        if (estadoMov == ERRADO && quantMov > 0) {
-            quantMov -= 1;
-            estadoMov = SEMMOV;
-            prontoMov = false;
-            Jogo.subTurno();
-            Jogo.resetaTabuleiro();
-
-            Main.desenhaTabuleiro(Jogo.getJogo());
-            Main.atualizaTabuleiro();
-            Main.atualizaMenu(estadoMov);
-        }
-    }
-
     public static void registraClique(Pos posicao) {
         Peca pecaClicada = null;
         boolean casaOcupada = Jogo.getJogo(posicao) != null;
@@ -112,8 +98,26 @@ public class ControleJogada {
         return (femAtual.equals(femCorreto));
     }
 
+    public static void voltaJogada(){
+        quantMov -= 1;
+        estadoMov = SEMMOV;
+        prontoMov = false;
+
+        Main.desenhaTabuleiro(Jogo.getJogo());
+        Main.atualizaTabuleiro();
+        Main.atualizaMenu(estadoMov);
+    }
+
+    public static EstadoMovimento getEstadoMov(){
+        return estadoMov;
+    }
+
     public static void resetEstadoMov() {
         estadoMov = SEMMOV;
+    }
+
+    public static int getQuantMov(){
+        return quantMov;
     }
 
     public static void resetQuantMov() {

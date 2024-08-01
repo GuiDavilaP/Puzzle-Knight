@@ -120,7 +120,7 @@ public class Main extends Application {
         proximoButton.setStyle(buttonStyle);
 
         // Adiciona ação ao botão "Voltar"
-        voltarButton.setOnAction(event -> ControleJogada.voltaJogada());
+        voltarButton.setOnAction(event -> Jogo.voltaPosicao());
         // Adiciona ação ao botão "Próximo"
         proximoButton.setOnAction(event -> Jogo.carregaNovoProblema());
 

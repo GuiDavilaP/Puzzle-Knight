@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static aplicacao.EstadoMovimento.ERRADO;
+import static aplicacao.EstadoMovimento.SEMMOV;
 import static aplicacao.pecas.Cor.*;
 import static java.nio.file.Files.readAllLines;
 
@@ -181,6 +183,17 @@ public class Jogo {
 
         for(int i = 0; i<Jogo.movimentos.size(); i++){
             System.out.println(Jogo.movimentos.get(i));
+        }
+    }
+
+    public static void voltaPosicao() {
+        EstadoMovimento estadoMov = ControleJogada.getEstadoMov();
+        int quantMov = ControleJogada.getQuantMov();
+
+        if(estadoMov == ERRADO && quantMov > 0){
+            Jogo.subTurno();
+            Jogo.resetaTabuleiro();
+            ControleJogada.voltaJogada();
         }
     }
 
