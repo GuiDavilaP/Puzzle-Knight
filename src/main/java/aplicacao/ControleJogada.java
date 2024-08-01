@@ -9,7 +9,6 @@ public class ControleJogada {
     private static EstadoMovimento estadoMov = EstadoMovimento.SEMMOV;
     private static int quantMov = 0;
 
-    //TODO: nao testado
     private static void movePeca(Pos posicaoDestino) {
         boolean movValido = pecaSelecionada.testaMovimento(pecaSelecionada.getPosicao(), posicaoDestino, Jogo.getJogo());
 

@@ -55,7 +55,7 @@ public class Jogo {
         boolean probJogado;
         int randomNum;
 
-        if(puzzlesJogados.size() >= 5)
+        if(puzzlesJogados.size() >= NUMPROB)
             puzzlesJogados.clear();
 
         do{
@@ -172,17 +172,11 @@ public class Jogo {
     }
 
     private static void leituraJogadas(List<String> linhas){
-        for(int i=0;i<linhas.size();i++){
-            if(linhas.get(i) != null && !linhas.get(i).isEmpty()){
-                Jogo.movimentos.add(linhas.get(i));
-            }
-            else{
-                i=linhas.size();
-            }
-        }
-
-        for(int i = 0; i<Jogo.movimentos.size(); i++){
+        int i = 0;
+        while(linhas.get(i) != null && !linhas.get(i).isEmpty()){
+            Jogo.movimentos.add(linhas.get(i));
             System.out.println(Jogo.movimentos.get(i));
+            i++;
         }
     }
 
