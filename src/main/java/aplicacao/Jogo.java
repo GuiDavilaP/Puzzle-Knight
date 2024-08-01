@@ -32,8 +32,7 @@ public class Jogo {
         ControleJogada.resetQuantMov();
         turnoAtual = 0;
 
-        //Path problema = escolheProblema();
-        Path problema = Paths.get("src/main/java/problemas/m2.txt");
+        Path problema = escolheProblema();
 
         List<String> linhas;
         try {
